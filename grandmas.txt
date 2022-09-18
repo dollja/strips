@@ -8,12 +8,12 @@ Actions:
                Postconditions: !At(X), At(Y)
                
                // climb up on the pillow
-               ClimbUp(Location)
+               LiftUp(Location)
                Preconditions:  At(Location), PillowAt(Location), Bed(asleep)
                Postconditions: Bed(awake), !Bed(asleep)
                
                // climb down from the pillow
-               ClimbDown(Location)
+               PushDown(Location)
                Preconditions:  At(Location), PillowAt(Location), Bed(awake)
                Postconditions: Bed(asleep), !Bed(awake)
                
@@ -23,6 +23,6 @@ Actions:
                Postconditions: PillowAt(Y), !PillowAt(X), At(Y), !At(X)
                
                // make soup with Red
-               MakeRed(Location)
+               MakeRedSoup(Location)
                Preconditions:  RedAt(Location), At(Location), Bed(awake)
                Postconditions: Have(Red)

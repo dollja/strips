@@ -1,5 +1,5 @@
 Initial state: RedAt(B), At(A), Bed(asleep), PillowAt(C)
-Goal state:    Have(Red)
+Goal state:    Eat(Red)
 
 Actions:
                // move from X to Y
@@ -7,12 +7,12 @@ Actions:
                Preconditions:  At(X), Bed(asleep)
                Postconditions: !At(X), At(Y)
                
-               // climb up on the pillow
+               // lift up the pillow off from Red
                LiftUp(Location)
                Preconditions:  At(Location), PillowAt(Location), Bed(asleep)
                Postconditions: Bed(awake), !Bed(asleep)
                
-               // climb down from the pillow
+               // push down the pillow on to Red
                PushDown(Location)
                Preconditions:  At(Location), PillowAt(Location), Bed(awake)
                Postconditions: Bed(asleep), !Bed(awake)
@@ -23,6 +23,6 @@ Actions:
                Postconditions: PillowAt(Y), !PillowAt(X), At(Y), !At(X)
                
                // make soup with Red
-               MakeRedSoup(Location)
+               MakeSoup(Location)
                Preconditions:  RedAt(Location), At(Location), Bed(awake)
-               Postconditions: Have(Red)
+               Postconditions: Eat(Red)
